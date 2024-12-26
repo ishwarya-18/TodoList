@@ -1,0 +1,259 @@
+/* General styling (unchanged) */
+
+/* Background and layout */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f8; /* Light mild background color */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Main container */
+.user-signup-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+  transition: background-color 0.3s ease;
+}
+
+/* Signup form styling */
+.user-signup-form {
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Header section styling */
+.user-signup-header {
+  margin-bottom: 20px;
+}
+
+.user-signup-header-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.user-signup-header-item img {
+  width: 50px;
+  margin-right: 10px;
+}
+
+body.dark-mode .user-signup-header-item img.user-signup-college-logo {
+  filter: brightness(1.3) saturate(1.5); /* Increase brightness and saturation */
+}
+
+.user-signup-header-item h2,
+.user-signup-header-item span {
+  font-size: 25px;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+
+/* Input field styling */
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+form {
+  text-align: left;
+}
+
+/* Button styling */
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+input:hover {
+  border-color: #45a049;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark mode styling */
+body.dark-mode {
+  background-color: #141414;
+  color: #fff;
+}
+
+body.dark-mode .user-signup-form {
+  background-color: #434343;
+  color: #fff;  /* Ensuring text is visible */
+}
+
+body.dark-mode input {
+  background-color: #333;
+  color: #fff;  /* Ensuring text is visible in input fields */
+  border: 1px solid #444;
+}
+
+body.dark-mode input::placeholder {
+  color: #bbb; /* Light placeholder text */
+}
+
+body.dark-mode button {
+  background-color: #333;
+  color: #fff;
+}
+
+body.dark-mode button:hover {
+  background-color: #555;
+}
+
+/* Fix visibility for headings in dark mode */
+body.dark-mode .user-signup-header-item h2,
+body.dark-mode .user-signup-header-item span {
+  color: #fff; /* Ensure heading text is visible in dark mode */
+}
+
+body.dark-mode .user-signup-register-link a {
+  color: #4caf50;
+}
+
+/* Dark mode toggle button styling */
+.user-signup-dark-mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: auto;
+  padding: 8px 15px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+}
+
+.user-signup-dark-mode-toggle:hover {
+  background-color: #45a049;
+}
+
+/* Focus effects */
+input:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Responsive Design (Media Queries) */
+
+/* For devices with a max width of 768px (tablets and below) */
+@media (max-width: 768px) {
+  .user-signup-header-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .user-signup-header-item img {
+    width: 40px;
+    margin-bottom: 10px;
+  }
+
+  .user-signup-form {
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .user-signup-container {
+    padding: 10px;
+  }
+
+  .user-signup-dark-mode-toggle {
+    top: 10px;
+    right: 10px;
+    font-size: 12px;
+  }
+
+  input {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  button {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+/* For devices with a max width of 480px (mobile devices) */
+@media (max-width: 480px) {
+  .user-signup-header-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .user-signup-header-item img {
+    width: 35px;
+    margin-bottom: 8px;
+  }
+
+  .user-signup-form {
+    padding: 15px;
+    width: 95%;
+    max-width: 350px;
+  }
+
+  .user-signup-dark-mode-toggle {
+    top: 5px;
+    right: 5px;
+    font-size: 10px;
+  }
+
+  input {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  button {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .user-signup-header-item h2, .user-signup-header-item span {
+    font-size: 20px;
+  }
+}

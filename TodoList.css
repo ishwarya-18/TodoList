@@ -1,0 +1,331 @@
+/* Background and layout */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Main container */
+.task-manager-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    top: 10px;
+    left: 480px;
+}
+
+/* Task form styling */
+.task-form-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+/* Header section styling */
+.task-header-section {
+    margin-bottom: 20px;
+}
+
+.task-header-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.task-header-item img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.task-header-item h2,
+.task-header-item span {
+    font-size: 25px;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+}
+
+/* Task List Styling */
+.task-list {
+    margin-top: 20px;
+    text-align: left;
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.task-item span {
+    width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-right: 10px;
+}
+
+.task-item button {
+    background-color: #f44336;
+    border: none;
+    font-size: 12px;
+    position: relative;
+    width: 60px;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.task-item button:hover {
+    background-color: #e53935;
+}
+
+/* Dark mode toggle button styling */
+/* Dark mode toggle button styling */
+.mode-toggle-button {
+    position: absolute;
+    top: 20px;
+    right: -380px; /* Adjusted position to make room for the logout button */
+    padding: 8px 15px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: auto;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+}
+
+.mode-toggle-button:hover {
+    background-color: #45a049;
+}
+
+/* Logout button styling */
+.logout-button {
+    position: absolute;
+    top: 20px;
+    right: -290px; /* Positioned near the mode button */
+    padding: 8px 15px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    width: auto;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+}
+
+.logout-button:hover {
+    background-color: #e53935;
+}
+
+/* Responsive Design: for smaller screens, adjust the position of the buttons */
+@media (max-width: 768px) {
+    .mode-toggle-button,
+    .logout-button {
+        top: 15px;
+    }
+    .mode-toggle-button {
+        right: 50px;
+    }
+    .logout-button {
+        right: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mode-toggle-button,
+    .logout-button {
+        top: 10px;
+    }
+    .mode-toggle-button {
+        right: 40px;
+    }
+    .logout-button {
+        right: 5px;
+    }
+}
+
+
+/* Focus effects */
+input:focus {
+    background-color: #fff;
+    border-color: #4caf50;
+    outline: none;
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Responsive Design: for smaller screens, adjust the position of the mode toggle */
+@media (max-width: 768px) {
+    .mode-toggle-buttonn {
+        top: 15px;
+        right: 15px;
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mode-toggle-buttonn {
+        top: 10px;
+        right: 10px;
+        padding: 5px 10px;
+        font-size: 10px;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .task-header-item img {
+        width: 40px;
+    }
+
+    .task-header-item h2,
+    .task-header-item span {
+        font-size: 20px;
+    }
+
+    .task-form-container {
+        padding: 30px;
+    }
+
+    input,
+    button {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .task-manager-container {
+        padding: 15px;
+    }
+
+    .task-header-item {
+        flex-direction: column;
+    }
+
+    .task-header-item img {
+        width: 35px;
+        margin-bottom: 10px;
+    }
+
+    .task-header-item h2,
+    .task-header-item span {
+        font-size: 18px;
+    }
+
+    .task-form-container {
+        padding: 20px;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    input,
+    button {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+/* Input and button styling */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Button styling */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Dark mode styling */
+body.dark-mode {
+    background-color: #141414;
+    color: #fff;
+}
+
+body.dark-mode .task-form-container {
+    background-color: #434343;
+    color: #fff;
+}
+
+body.dark-mode input {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #444;
+}
+
+body.dark-mode input::placeholder {
+    color: #bbb;
+}
+
+body.dark-mode button {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-mode button:hover {
+    background-color: #555;
+}
+
+body.dark-mode .task-header-item h2,
+body.dark-mode .task-header-item span {
+    color: #fff;
+}
+
