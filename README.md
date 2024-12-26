@@ -1,4 +1,4 @@
-# To-Do List App 📝
+# To-Do List Project 📝
 
 A simple and interactive to-do list application built with a focus on frontend functionality using *React.js*. The app includes a to-do list page with support for dark and light modes. Backend integration is planned for future updates to persist data.
 
